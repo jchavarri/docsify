@@ -49,7 +49,7 @@ function walkFetchEmbed({ embedTokens, compile, fetch }, cb) {
             if (token.embed.fragment) {
               const fragment = token.embed.fragment;
               const pattern = new RegExp(
-                `(?:###|\\/\\/\\/)\\s*\\[${fragment}\\]([\\s\\S]*)(?:###|\\/\\/\\/)\\s*\\[${fragment}\\]`
+                `\\(\\*\\s*\\[${fragment}\\]\\s*\\*\\)([\\s\\S]*)\\(\\*\\s*\\[${fragment}\\]\\s*\\*\\)`
               );
               text = stripIndent((text.match(pattern) || [])[1] || '').trim();
             }
